@@ -1,0 +1,27 @@
+.image-question {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: space-around;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.image-question img {
+    border-style: inset;
+    border-radius: 6px;
+}
+
+.correct{
+    color: rgb(141, 241, 141);
+    font-weight: bold;
+    font-size: large;
+    background-color: rgba(3,38,135, 0.6)
+}
+
+.wrong {
+    color: red;
+    font-weight: bold;
+    font-size: large;
+    background-color: rgba(3,38,135, 0.6)
+}

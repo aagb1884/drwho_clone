@@ -1,0 +1,24 @@
+.plot-point-layout {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 5px 5px;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center
+}
+
+.plot-points {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: rgba(3,38,135, 0.6);
+    border: 1px solid white;
+    border-style: inset;
+    border-radius: 2px;
+    width: auto;
+    min-height: 80px;
+    font-family: 'Geo', sans-serif;
+    padding: 5px;
+    font-size: large;
+}

@@ -1,0 +1,52 @@
+.high-scores-container{
+    display: flex;
+    justify-content: center;
+}
+
+.header-row{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: aqua;
+    color: black;
+    height: auto;
+    width: 100%;
+
+}
+
+.high-scores-table{
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    width: auto;
+}
+
+.score-row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%; 
+    padding: 10px;
+  }
+
+.score-row-data{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  padding: 10px;
+}
+.username, .totalscore {
+    flex-basis: 40%;
+    text-align: center; 
+  }
+
+.even-row{
+background-color: blue;
+
+}
+
+.odd-row{
+background-color: aqua;
+color: black;
+}
+

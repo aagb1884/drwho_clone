@@ -1,0 +1,172 @@
+/* header css */
+
+.header {
+  position: relative;
+  text-align: center;
+  
+}
+
+.header img {
+    max-height: 250px;
+    width: auto;
+}
+
+.header > h1 {
+    font-size: 60px;
+}
+
+.nav-bar__buttons{
+  display: flex;
+  justify-content: center;
+  padding-left: 2.5%;
+  }
+  
+  .signup-button{
+  padding-right: 10px;
+  }
+
+/* round buttons css */
+
+.round-buttons-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.round-buttons-component {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px;
+    border-style: inset;
+  }
+  
+  .quiz-buttons-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 10px;
+  }
+
+
+  .round-button {
+    position: relative;
+    margin: 10px;
+    overflow: hidden;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .button-image {
+    display: block;
+    max-width: 200px;
+    width: auto;
+    height: auto;
+    opacity: 0.8;
+    transition: opacity 0.3s ease-in-out;
+    position: relative;
+    margin: 5px;
+    border-radius: 6px;
+    box-shadow: 5px 2px 2px rgb(10,83,200);
+    -webkit-mask-image: linear-gradient(45deg,#000 25%,rgba(0,0,0,.2) 50%,#000 75%);
+    mask-image: linear-gradient(45deg,#000 25%,rgba(0,0,0,.2) 50%,#000 75%);
+    -webkit-mask-size: 800%;
+    mask-size: 800%;
+    -webkit-mask-position: 0;
+    mask-position: 0;
+  }
+
+  .button-image:hover {
+    transition: mask-position 2s ease,-webkit-mask-position 2s ease;
+    -webkit-mask-position: 120%;
+    mask-position: 120%;
+    opacity: 1;
+}
+
+  .button-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(252, 243, 176);
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: bold;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 1;
+    text-shadow:2px 2px #032687
+  }
+  
+  .round-button:hover .button-image {
+    opacity: 0.6;
+  }
+  
+  .round-button:hover .button-text {
+    opacity: 1;
+  }
+
+  .good-dogs {
+    position: relative;
+    text-align: center;
+  }
+  .first-question {
+    position: relative;
+    text-align: center;
+  }
+  .general1 {
+    position: relative;
+    text-align: center;
+  }
+  .all-greek {
+    position: relative;
+    text-align: center;
+  }
+  .odd-one-out {
+    position: relative;
+    text-align: center;
+  }
+  .colin-cliffhanger {
+    position: relative;
+    text-align: center;
+  }
+  .production-codes {
+    position: relative;
+    text-align: center;
+  }
+  .inhuman {
+    position: relative;
+    text-align: center;
+  }
+
+  .general2{
+    position: relative;
+    text-align: center;
+  }
+  .how-long{
+    position: relative;
+    text-align: center;
+  }
+  .intros-pop{
+    position: relative;
+    text-align: center;
+  }
+  .intros-incidental{
+    position: relative;
+    text-align: center;
+  }
+  .played-themselves{
+    position: relative;
+    text-align: center;
+  }
+  .wheel{
+    position: relative;
+    text-align: center;
+  }
+
+  .disabled {
+    pointer-events: none; 
+    background-color: gray; 
+    color: white; 
+    cursor: not-allowed; 
+  }
+  
