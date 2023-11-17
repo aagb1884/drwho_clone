@@ -181,14 +181,20 @@ const RoundButtons = (
             <div className="quiz-buttons-row">
             <div className="new-quiz-button">
                 <button onClick={resetQuiz}
-                >Start New Quiz</button>
-                
+                >Start New Quiz</button>  
             </div>
+
+            <div className="save-quiz-button">
+                <button onClick={saveQuiz}
+                >Save Quiz</button>  
+            </div>
+
             <div className="add-to-high-score-button">
                 <button onClick={saveQuiz}
                 disabled={!isQuizFinished}
                 >Submit Score</button>
             </div>
+
             <div className="finish-quiz-button">
                 <button onClick={finishQuiz}
                  >Finish quiz</button>

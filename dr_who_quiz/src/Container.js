@@ -27,6 +27,7 @@ import { v4 as uuid } from 'uuid';
 import { postQuiz } from "./components/HighScores/UserQuizDataService";
 import { Auth0ProviderWithNavigate } from "./components/auth0/auth0-provider-with-navigate";
 
+
 const MainContainer = () => {
     const { totalScore, resetScoreToZero } = useScore();
     const [isFirstQuestionsRoundFinished, setIsFirstQuestionsRoundFinished] = useState(false);
@@ -115,18 +116,17 @@ const MainContainer = () => {
 const quizData = {
   quizUser: "username",
   quizDateFinished: getDate(),
-  roundsCompleted: [{isFirstQuestionsRoundFinished: true}, 
-    {isColinRoundFinished: true}, {isGreekRoundFinished: true}, 
-    {isOddOneOutRoundFinished: true}, {isDogRoundFinished: true},
-    {isEpisodeNamesRoundFinished: true}, {isGeneral1RoundFinished: true},
-    {isGeneral2RoundFinished: true}, {isProductionCodesRoundFinished: true},
-    {isInhumanRoundFinished: true}, {isHowLongRoundFinished: true}, 
-    {isIntros1RoundFinished: true}, {isIntros2RoundFinished: true}, 
-    {isPlayedThemselvesRoundFinished: true}, {isWheelInSpaceRoundFinished: true}],
+  roundsCompleted: [{isFirstQuestionsRoundFinished: isFirstQuestionsRoundFinished}, 
+    {isColinRoundFinished: isColinRoundFinished}, {isGreekRoundFinished: isGreekRoundFinished}, 
+    {isOddOneOutRoundFinished: isOddOneOutRoundFinished}, {isDogRoundFinished: isDogRoundFinished},
+    {isEpisodeNamesRoundFinished: isEpisodeNamesRoundFinished}, {isGeneral1RoundFinished: isGeneral1RoundFinished},
+    {isGeneral2RoundFinished: isGeneral2RoundFinished}, {isProductionCodesRoundFinished: isProductionCodesRoundFinished},
+    {isInhumanRoundFinished: isInhumanRoundFinished}, {isHowLongRoundFinished: isHowLongRoundFinished}, 
+    {isIntros1RoundFinished: isIntros1RoundFinished}, {isIntros2RoundFinished: isIntros2RoundFinished}, 
+    {isPlayedThemselvesRoundFinished: isPlayedThemselvesRoundFinished}, {isWheelInSpaceRoundFinished: isWheelInSpaceRoundFinished}],
   isQuizFinished: isQuizFinished,
   totalScore: totalScore,
 };
-
 
       const saveQuiz = async () => {
         try {
@@ -149,7 +149,7 @@ const quizData = {
         <>
         
         <BrowserRouter>
-          <Auth0ProviderWithNavigate>
+          {/* <Auth0ProviderWithNavigate> */}
             <Routes>
               <Route path="/" element={<HomePage totalScore={totalScore}
                                       isFirstQuestionsRoundFinished={isFirstQuestionsRoundFinished}
@@ -237,7 +237,7 @@ const quizData = {
               <Route path="/callback" element={<CallbackPage/>}/>
               <Route path="*" element={<ErrorPage/>} />
             </Routes>
-          </Auth0ProviderWithNavigate>
+          {/* </Auth0ProviderWithNavigate> */}
       </BrowserRouter>
       </>
      );

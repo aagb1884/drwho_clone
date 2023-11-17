@@ -18,13 +18,13 @@ const HomePage = ({totalScore, isFirstQuestionsRoundFinished,
         <Header />
         <br/>
         <div className='home-page-wrapper'>
-        {!isAuthenticated && (
+        {/* {!isAuthenticated && (
                     <div className='login-text'>
                         <h1>Log in to see the quiz.</h1>
                     </div>
                 )}
                  {isAuthenticated && (
-                    <>
+                    <> */}
         <RoundButtons  
         isFirstQuestionsRoundFinished={isFirstQuestionsRoundFinished}
         isColinRoundFinished={isColinRoundFinished}
@@ -49,8 +49,8 @@ const HomePage = ({totalScore, isFirstQuestionsRoundFinished,
         quizData={quizData}
         />
         
-        </>
-        )}
+        {/* </>
+        )} */}
         </div>
         <Footer />
         </section>
