@@ -2,9 +2,9 @@ import { getQuizzes } from "./HighScores/UserQuizDataService";
 import { useState, useEffect } from "react";
 import Header from "./layout/Header";
 import Footer from "./layout/Footer";
-import UserQuizInfo from "../UserQuizInfo";
+import UserQuizInfo from "./UserQuizInfo";
 
-const UserPage = () => {
+const UserPage = ({setSelectedQuiz}) => {
     const [userScores, setUserScores] = useState([]);
 
     useEffect(()=> {
@@ -21,7 +21,9 @@ const UserPage = () => {
         <Header />
         <section className="user-page-content">
             <h1>User Info Page</h1>
-            <UserQuizInfo allUserQuizzes={allUserQuizzes} />
+            <UserQuizInfo allUserQuizzes={allUserQuizzes}
+                          setSelectedQuiz={setSelectedQuiz}  
+                            />
         </section>
         <Footer />
         </>

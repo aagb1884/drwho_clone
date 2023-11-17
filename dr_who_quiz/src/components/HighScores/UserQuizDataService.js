@@ -5,6 +5,13 @@ export const getQuizzes = () => {
         .then(res => res.json())
 }
 
+export const getSingleQuiz = (id) => {
+  const singleQuizUrl = `${baseURL}/${id}`;
+
+  return fetch(singleQuizUrl)
+  .then( res => res.json())
+}
+
 export const postQuiz = (payload) => {
     return fetch(baseURL, {
         method: 'POST',
