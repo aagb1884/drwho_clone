@@ -1,6 +1,4 @@
 import * as React from "react";
-import Greek from "../quiz_rounds/Greek/GreekData";
-import { render } from "react-dom";
 import { useEffect, useState } from "react";
 
 const Countdown = ({ reset }) => {

@@ -11,9 +11,11 @@ function App() {
   return (
     <div className="App">
       
+     
       <ScoreProvider>
         <MainContainer />
       </ScoreProvider>
+     
      
     </div>
   );

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Countdown from "../../quiz_elements/Countdown";
 import Question from "../../quiz_elements/Question";
-import Header from '../../layout/Header';
 import Footer from "../../layout/Footer";
 import { useNavigate } from "react-router-dom";
 import { useScore } from "../../quiz_elements/ScoreContext";

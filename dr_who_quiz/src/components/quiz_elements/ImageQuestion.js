@@ -18,7 +18,7 @@ const ImageQuestion = ({question, checkAnswer, isAnswerCorrect}) => {
         return ( 
             <section className="image-question">
             <h1>Question {question.number}</h1>
-            <img src={question.question}/>    
+            <img src={question.question} alt="sorry this isn't loading"/>    
             <br />
             <input type="text" 
             value={userAnswer} 

@@ -7,6 +7,7 @@ const UserInfoBox = ({totalScore}) => {
     
     // totalScore.reduce((acc, score) => acc + score, 0);
     
+    console.log("hello from inside the app")
 
     return ( 
         <section className="user-info-box">

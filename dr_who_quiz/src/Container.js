@@ -4,7 +4,7 @@ import HomePage from "./components/HomePage";
 import ErrorPage from "./components/ErrorPage";
 import DogData from "./components/quiz_rounds/Dogs/DogData";
 import GeneralKnowledge2Data from "./components/quiz_rounds/GeneralKnowledge2/GeneralKnowledge2Data";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useScore } from "./components/quiz_elements/ScoreContext";
 import EpisodeNameData from "./components/quiz_rounds/EpisodeNames/EpisodeNameData";
@@ -23,9 +23,9 @@ import WheelInSpaceData from "./components/quiz_rounds/WheelInSpace/WheelInSpace
 import LandingPage from './components/Landing';
 import HighScores from "./components/HighScores/HighScores";
 import { CallbackPage } from "./components/auth0/callback-page";
-import { Auth0ProviderWithNavigate } from "./components/auth0/auth0-provider-with-navigate";
 import { v4 as uuid } from 'uuid';
 import { postQuiz } from "./components/HighScores/UserQuizDataService";
+import { Auth0ProviderWithNavigate } from "./components/auth0/auth0-provider-with-navigate";
 
 const MainContainer = () => {
     const { totalScore, resetScoreToZero } = useScore();
@@ -115,17 +115,18 @@ const MainContainer = () => {
 const quizData = {
   quizUser: "username",
   quizDateFinished: getDate(),
-  roundsCompleted: [isFirstQuestionsRoundFinished, 
-    isColinRoundFinished, isGreekRoundFinished, 
-    isOddOneOutRoundFinished, isDogRoundFinished,
-    isEpisodeNamesRoundFinished, isGeneral1RoundFinished,
-    isGeneral2RoundFinished, isProductionCodesRoundFinished,
-    isInhumanRoundFinished, isHowLongRoundFinished, 
-    isIntros1RoundFinished, isIntros2RoundFinished, 
-    isPlayedThemselvesRoundFinished, isWheelInSpaceRoundFinished],
+  roundsCompleted: [{isFirstQuestionsRoundFinished: true}, 
+    {isColinRoundFinished: true}, {isGreekRoundFinished: true}, 
+    {isOddOneOutRoundFinished: true}, {isDogRoundFinished: true},
+    {isEpisodeNamesRoundFinished: true}, {isGeneral1RoundFinished: true},
+    {isGeneral2RoundFinished: true}, {isProductionCodesRoundFinished: true},
+    {isInhumanRoundFinished: true}, {isHowLongRoundFinished: true}, 
+    {isIntros1RoundFinished: true}, {isIntros2RoundFinished: true}, 
+    {isPlayedThemselvesRoundFinished: true}, {isWheelInSpaceRoundFinished: true}],
   isQuizFinished: isQuizFinished,
-  totalScore: parseInt(totalScore, 10),
+  totalScore: totalScore,
 };
+
 
       const saveQuiz = async () => {
         try {
@@ -140,105 +141,105 @@ const quizData = {
     
      
       
-      const jsonString = JSON.stringify(quizData);
-console.log('Serialized Quiz Data:', jsonString);
+//      for testing quiz data content
+//  const jsonString = JSON.stringify(quizData);
+// console.log('Serialized Quiz Data:', jsonString);
 
     return (
         <>
         
-        <Router>
-          
+        <BrowserRouter>
+          <Auth0ProviderWithNavigate>
             <Routes>
-            <Route path="/" element={<HomePage totalScore={totalScore}
-                                    isFirstQuestionsRoundFinished={isFirstQuestionsRoundFinished}
-                                    isColinRoundFinished={isColinRoundFinished}
-                                    isGreekRoundFinished={isGreekRoundFinished}
-                                    isOddOneOutRoundFinished={isOddOneOutRoundFinished}
-                                    isDogRoundFinished={isDogRoundFinished} 
-                                    isEpisodeNamesRoundFinished={isEpisodeNamesRoundFinished}
-                                    isGeneral1RoundFinished={isGeneral1RoundFinished}
-                                    isGeneral2RoundFinished={isGeneral2RoundFinished}
-                                    isProductionCodesRoundFinished={isProductionCodesRoundFinished}
-                                    isInhumanRoundFinished={isInhumanRoundFinished}
-                                    isHowLongRoundFinished={isHowLongRoundFinished}
-                                    isIntros1RoundFinished={isIntros1RoundFinished}
-                                    isIntros2RoundFinished={isIntros2RoundFinished}
-                                    isPlayedThemselvesRoundFinished={isPlayedThemselvesRoundFinished}
-                                    isWheelInSpaceRoundFinished={isWheelInSpaceRoundFinished}
-                                    resetQuiz={resetQuiz}
-                                    isQuizFinished={isQuizFinished}
-                                    saveQuiz={saveQuiz} 
-                                    finishQuiz={finishQuiz}
-                                    quizData={quizData}/>} />
-            <Route path="/first-questions" element={<FirstQuestionData 
-                                    isFirstQuestionsRoundFinished={isFirstQuestionsRoundFinished}
-                                    setIsFirstQuestionsRoundFinished={setIsFirstQuestionsRoundFinished} />} />
-            <Route path="/greek" element={<GreekData 
-                                    isGreekRoundFinished={isGreekRoundFinished}
-                                    setIsGreekRoundFinished={setIsGreekRoundFinished}
-            />} />
-            <Route path="/odd-one" element={<MultipleChoiceData 
-                                    isOddOneOutRoundFinished={isOddOneOutRoundFinished}
-                                    setIsOddOneOutRoundFinished={setIsOddOneOutRoundFinished} />} />
-            <Route path="/dogs" element={<DogData 
-                                    isDogRoundFinished={isDogRoundFinished} 
-                                    setIsDogRoundFinished={setIsDogRoundFinished}
-            />} />
-            <Route path="/episode-names" element={<EpisodeNameData 
-                                    isEpisodeNamesRoundFinished={isEpisodeNamesRoundFinished}
-                                    setIsEpisodeNamesRoundFinished={setIsEpisodeNamesRoundFinished}
-            />} />
-            <Route path="/colin-cliffhanger" element={<ColinCliffhangerData 
-                                    isColinRoundFinished={isColinRoundFinished}
-                                    setIsColinRoundFinished={setIsColinRoundFinished}
-            />} />
-            <Route path="/general1" element={<GeneralKnowledgeOneData 
-                                    isGeneral1RoundFinished={isGeneral1RoundFinished}
-                                    setIsGeneral1RoundFinished={setIsGeneral1RoundFinished}
-            />} />
-            <Route path="/general2" element={<GeneralKnowledge2Data 
-                                    isGeneral2RoundFinished={isGeneral2RoundFinished}
-                                    setIsGeneral2RoundFinished={setIsGeneral2RoundFinished}
-            />} />
-            <Route path="/production-codes" element={<ProductionCodesData 
-                                    isProductionCodesRoundFinished={isProductionCodesRoundFinished}
-                                    setIsProductionCodesRoundFinished={setIsProductionCodesRoundFinished}
-            />} />
-            <Route path="/inhuman" element={<InhumanData 
-                                    isInhumanRoundFinished={isInhumanRoundFinished}
-                                    setIsInhumanRoundFinished={setIsInhumanRoundFinished}
-            />} />
-            <Route path="/how-long" element={<HowLongData 
-                                    isHowLongRoundFinished={isHowLongRoundFinished}
-                                    setIsHowLongRoundFinished={setIsHowLongRoundFinished}
-            />} />
-            <Route path="/intros-incidental" element={<IncidentalIntrosData 
-                                    isIntros1RoundFinished={isIntros1RoundFinished}
-                                    setIsIntros1Finished={setIsIntros1Finished}
-            />} />
-            <Route path="/intros-pop" element={<PopIntrosData 
-                                    isIntros2RoundFinished={isIntros2RoundFinished}
-                                    setIsIntros2Finished={setIsIntros2Finished}
-            />} />
-            <Route path="/played-themselves" element={<PlayedThemselvesData 
-                                    isPlayedThemselvesRoundFinished={isPlayedThemselvesRoundFinished}
-                                    setIsPlayedThemselvesRoundFinished={setIsPlayedThemselvesRoundFinished}
-            />} />
-            <Route path="/wheel-in-space" element={<WheelInSpaceData 
-                                    isWheelInSpaceRoundFinished={isWheelInSpaceRoundFinished}
-                                    setIsWheelInSpaceRoundFinished={setIsWheelInSpaceRoundFinished}
-            />} />
-            <Route path="/about" element={<AboutPage />} />
-            <Route path="/how" element={<HowItWorks />} />
-            <Route path="/landing" element={<LandingPage />} />
-            <Route path="/high-scores" element={<HighScores />} />
-            <Route path="/callback" element={<CallbackPage/>}/>
-            <Route path="*" element={<ErrorPage/>} />
+              <Route path="/" element={<HomePage totalScore={totalScore}
+                                      isFirstQuestionsRoundFinished={isFirstQuestionsRoundFinished}
+                                      isColinRoundFinished={isColinRoundFinished}
+                                      isGreekRoundFinished={isGreekRoundFinished}
+                                      isOddOneOutRoundFinished={isOddOneOutRoundFinished}
+                                      isDogRoundFinished={isDogRoundFinished} 
+                                      isEpisodeNamesRoundFinished={isEpisodeNamesRoundFinished}
+                                      isGeneral1RoundFinished={isGeneral1RoundFinished}
+                                      isGeneral2RoundFinished={isGeneral2RoundFinished}
+                                      isProductionCodesRoundFinished={isProductionCodesRoundFinished}
+                                      isInhumanRoundFinished={isInhumanRoundFinished}
+                                      isHowLongRoundFinished={isHowLongRoundFinished}
+                                      isIntros1RoundFinished={isIntros1RoundFinished}
+                                      isIntros2RoundFinished={isIntros2RoundFinished}
+                                      isPlayedThemselvesRoundFinished={isPlayedThemselvesRoundFinished}
+                                      isWheelInSpaceRoundFinished={isWheelInSpaceRoundFinished}
+                                      resetQuiz={resetQuiz}
+                                      isQuizFinished={isQuizFinished}
+                                      saveQuiz={saveQuiz} 
+                                      finishQuiz={finishQuiz}
+                                      quizData={quizData}/>} />
+              <Route path="/first-questions" element={<FirstQuestionData 
+                                      isFirstQuestionsRoundFinished={isFirstQuestionsRoundFinished}
+                                      setIsFirstQuestionsRoundFinished={setIsFirstQuestionsRoundFinished} />} />
+              <Route path="/greek" element={<GreekData 
+                                      isGreekRoundFinished={isGreekRoundFinished}
+                                      setIsGreekRoundFinished={setIsGreekRoundFinished}
+              />} />
+              <Route path="/odd-one" element={<MultipleChoiceData 
+                                      isOddOneOutRoundFinished={isOddOneOutRoundFinished}
+                                      setIsOddOneOutRoundFinished={setIsOddOneOutRoundFinished} />} />
+              <Route path="/dogs" element={<DogData 
+                                      isDogRoundFinished={isDogRoundFinished} 
+                                      setIsDogRoundFinished={setIsDogRoundFinished}
+              />} />
+              <Route path="/episode-names" element={<EpisodeNameData 
+                                      isEpisodeNamesRoundFinished={isEpisodeNamesRoundFinished}
+                                      setIsEpisodeNamesRoundFinished={setIsEpisodeNamesRoundFinished}
+              />} />
+              <Route path="/colin-cliffhanger" element={<ColinCliffhangerData 
+                                      isColinRoundFinished={isColinRoundFinished}
+                                      setIsColinRoundFinished={setIsColinRoundFinished}
+              />} />
+              <Route path="/general1" element={<GeneralKnowledgeOneData 
+                                      isGeneral1RoundFinished={isGeneral1RoundFinished}
+                                      setIsGeneral1RoundFinished={setIsGeneral1RoundFinished}
+              />} />
+              <Route path="/general2" element={<GeneralKnowledge2Data 
+                                      isGeneral2RoundFinished={isGeneral2RoundFinished}
+                                      setIsGeneral2RoundFinished={setIsGeneral2RoundFinished}
+              />} />
+              <Route path="/production-codes" element={<ProductionCodesData 
+                                      isProductionCodesRoundFinished={isProductionCodesRoundFinished}
+                                      setIsProductionCodesRoundFinished={setIsProductionCodesRoundFinished}
+              />} />
+              <Route path="/inhuman" element={<InhumanData 
+                                      isInhumanRoundFinished={isInhumanRoundFinished}
+                                      setIsInhumanRoundFinished={setIsInhumanRoundFinished}
+              />} />
+              <Route path="/how-long" element={<HowLongData 
+                                      isHowLongRoundFinished={isHowLongRoundFinished}
+                                      setIsHowLongRoundFinished={setIsHowLongRoundFinished}
+              />} />
+              <Route path="/intros-incidental" element={<IncidentalIntrosData 
+                                      isIntros1RoundFinished={isIntros1RoundFinished}
+                                      setIsIntros1Finished={setIsIntros1Finished}
+              />} />
+              <Route path="/intros-pop" element={<PopIntrosData 
+                                      isIntros2RoundFinished={isIntros2RoundFinished}
+                                      setIsIntros2Finished={setIsIntros2Finished}
+              />} />
+              <Route path="/played-themselves" element={<PlayedThemselvesData 
+                                      isPlayedThemselvesRoundFinished={isPlayedThemselvesRoundFinished}
+                                      setIsPlayedThemselvesRoundFinished={setIsPlayedThemselvesRoundFinished}
+              />} />
+              <Route path="/wheel-in-space" element={<WheelInSpaceData 
+                                      isWheelInSpaceRoundFinished={isWheelInSpaceRoundFinished}
+                                      setIsWheelInSpaceRoundFinished={setIsWheelInSpaceRoundFinished}
+              />} />
+              <Route path="/about" element={<AboutPage />} />
+              <Route path="/how" element={<HowItWorks />} />
+              <Route path="/landing" element={<LandingPage />} />
+              <Route path="/high-scores" element={<HighScores />} />
+              <Route path="/callback" element={<CallbackPage/>}/>
+              <Route path="*" element={<ErrorPage/>} />
             </Routes>
-            
-        </Router> 
-       
-        </>
+          </Auth0ProviderWithNavigate>
+      </BrowserRouter>
+      </>
      );
 }
  

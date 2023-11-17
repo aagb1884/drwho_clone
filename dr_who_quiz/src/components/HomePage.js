@@ -1,6 +1,7 @@
 import Header from './layout/Header';
 import Footer from "./layout/Footer";
 import RoundButtons from './layout/RoundButtons';
+import { useAuth0 } from "@auth0/auth0-react";
 
 const HomePage = ({totalScore, isFirstQuestionsRoundFinished,
         isColinRoundFinished, isGreekRoundFinished, isOddOneOutRoundFinished,
@@ -9,7 +10,7 @@ const HomePage = ({totalScore, isFirstQuestionsRoundFinished,
         isHowLongRoundFinished, isIntros1RoundFinished, isIntros2RoundFinished, 
         isPlayedThemselvesRoundFinished, isWheelInSpaceRoundFinished, resetQuiz, 
         isQuizFinished, saveQuiz, finishQuiz, quizData}) => {
-
+            const { isAuthenticated } = useAuth0();
            
 
     return (  
@@ -17,7 +18,13 @@ const HomePage = ({totalScore, isFirstQuestionsRoundFinished,
         <Header />
         <br/>
         <div className='home-page-wrapper'>
-            
+        {!isAuthenticated && (
+                    <div className='login-text'>
+                        <h1>Log in to see the quiz.</h1>
+                    </div>
+                )}
+                 {isAuthenticated && (
+                    <>
         <RoundButtons  
         isFirstQuestionsRoundFinished={isFirstQuestionsRoundFinished}
         isColinRoundFinished={isColinRoundFinished}
@@ -37,13 +44,13 @@ const HomePage = ({totalScore, isFirstQuestionsRoundFinished,
         totalScore={totalScore}
         resetQuiz={resetQuiz}
         isQuizFinished={isQuizFinished}
-        totalScore={totalScore}
         saveQuiz={saveQuiz}
         finishQuiz={finishQuiz}
         quizData={quizData}
         />
         
-           
+        </>
+        )}
         </div>
         <Footer />
         </section>
