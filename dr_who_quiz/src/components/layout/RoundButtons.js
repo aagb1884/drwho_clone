@@ -8,7 +8,7 @@ const RoundButtons = (
         isGeneral2RoundFinished, isProductionCodesRoundFinished, isInhumanRoundFinished,
         isHowLongRoundFinished, isIntros1RoundFinished, isIntros2RoundFinished, 
         isPlayedThemselvesRoundFinished, isWheelInSpaceRoundFinished, resetQuiz, totalScore, isQuizFinished, 
-        saveQuiz, finishQuiz}) => {
+        saveQuiz, finishQuiz, quizData}) => {
                 
      
 

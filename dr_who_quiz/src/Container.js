@@ -112,8 +112,22 @@ const MainContainer = () => {
       const finishQuiz = () => {
         setIsQuizFinished(true)
 }
-     
-      const saveQuiz = async (quizData) => {
+const quizData = {
+  quizUser: "username",
+  quizDateFinished: getDate(),
+  roundsCompleted: [isFirstQuestionsRoundFinished, 
+    isColinRoundFinished, isGreekRoundFinished, 
+    isOddOneOutRoundFinished, isDogRoundFinished,
+    isEpisodeNamesRoundFinished, isGeneral1RoundFinished,
+    isGeneral2RoundFinished, isProductionCodesRoundFinished,
+    isInhumanRoundFinished, isHowLongRoundFinished, 
+    isIntros1RoundFinished, isIntros2RoundFinished, 
+    isPlayedThemselvesRoundFinished, isWheelInSpaceRoundFinished],
+  isQuizFinished: isQuizFinished,
+  totalScore: parseInt(totalScore, 10),
+};
+
+      const saveQuiz = async () => {
         try {
           const response = await postQuiz(quizData);
       
@@ -123,20 +137,7 @@ const MainContainer = () => {
         }
       };
 
-      const quizData = {
-        quizUser: "username",
-        quizDateFinished: getDate(),
-        roundsCompleted: [isFirstQuestionsRoundFinished, 
-          isColinRoundFinished, isGreekRoundFinished, 
-          isOddOneOutRoundFinished, isDogRoundFinished,
-          isEpisodeNamesRoundFinished, isGeneral1RoundFinished,
-          isGeneral2RoundFinished, isProductionCodesRoundFinished,
-          isInhumanRoundFinished, isHowLongRoundFinished, 
-          isIntros1RoundFinished, isIntros2RoundFinished, 
-          isPlayedThemselvesRoundFinished, isWheelInSpaceRoundFinished],
-        isQuizFinished: isQuizFinished,
-        totalScore: parseInt(totalScore, 10),
-      };
+    
      
       
       const jsonString = JSON.stringify(quizData);
@@ -167,7 +168,8 @@ console.log('Serialized Quiz Data:', jsonString);
                                     resetQuiz={resetQuiz}
                                     isQuizFinished={isQuizFinished}
                                     saveQuiz={saveQuiz} 
-                                    finishQuiz={finishQuiz}/>} />
+                                    finishQuiz={finishQuiz}
+                                    quizData={quizData}/>} />
             <Route path="/first-questions" element={<FirstQuestionData 
                                     isFirstQuestionsRoundFinished={isFirstQuestionsRoundFinished}
                                     setIsFirstQuestionsRoundFinished={setIsFirstQuestionsRoundFinished} />} />

@@ -8,7 +8,7 @@ const HomePage = ({totalScore, isFirstQuestionsRoundFinished,
         isGeneral2RoundFinished, isProductionCodesRoundFinished, isInhumanRoundFinished,
         isHowLongRoundFinished, isIntros1RoundFinished, isIntros2RoundFinished, 
         isPlayedThemselvesRoundFinished, isWheelInSpaceRoundFinished, resetQuiz, 
-        isQuizFinished, saveQuiz, finishQuiz}) => {
+        isQuizFinished, saveQuiz, finishQuiz, quizData}) => {
 
            
 
@@ -40,6 +40,7 @@ const HomePage = ({totalScore, isFirstQuestionsRoundFinished,
         totalScore={totalScore}
         saveQuiz={saveQuiz}
         finishQuiz={finishQuiz}
+        quizData={quizData}
         />
         
            
