@@ -2,11 +2,9 @@ import React from "react";
 import Score from "./Score";
 import './ScoresTable.css';
 
-const ScoresTable = ({userScores}) => {
+const ScoresTable = ({allScores}) => {
 
-
-  console.log(userScores)
-    const filteredScores = userScores.filter(score => 
+    const filteredScores = allScores.filter(score => 
                                           score && score.totalScore !== null &&
                                           score.totalScore !== undefined && 
                                           score.totalScore !== '' &&
@@ -21,7 +19,7 @@ const ScoresTable = ({userScores}) => {
 
         return (
         <div className={`score-row ${rowClass}`} key={score._id}>
-            <Score score={score} username={score.username} totalscore={score.totalScore} />
+            <Score score={score} username={score.quizUser} totalscore={score.totalScore} />
         </div>
         )
     });

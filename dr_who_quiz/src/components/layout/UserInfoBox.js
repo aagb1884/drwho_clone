@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 const UserInfoBox = ({totalScore}) => {
 
     let total = 0;
@@ -14,7 +16,7 @@ const UserInfoBox = ({totalScore}) => {
         
         <p>userName</p>
         <p>Total Score: {total}</p>
-        <p>Log Out</p>
+        <NavLink to="/user">User Page</NavLink>
         
         </section>
      );

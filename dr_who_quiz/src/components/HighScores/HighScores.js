@@ -1,17 +1,17 @@
 import Header from '../layout/Header';
 import Footer from "../layout/Footer";
-import { getScores } from './UserQuizDataService';
+import { getQuizzes } from './UserQuizDataService';
 import { useState, useEffect } from 'react';
 import ScoresTable from './ScoresTable';
 
 
 const HighScores = () => {
 
-    const [userScores, setUserScores] = useState([]);
+    const [allScores, setAllScores] = useState([]);
 
     useEffect(()=> {
-        getScores().then((allScores) => {
-            setUserScores(allScores)
+        getQuizzes().then((scores) => {
+            setAllScores(scores)
         })
     }, []);
 
@@ -24,7 +24,7 @@ const HighScores = () => {
                 <div className='high-score-wrapper'>
                     <h1>HIGH SCORES</h1>
                 
-                <ScoresTable userScores={userScores} />
+                <ScoresTable allScores={allScores} />
                 </div>
                 <Footer />
                 </section>

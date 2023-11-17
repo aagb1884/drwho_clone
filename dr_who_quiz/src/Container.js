@@ -26,6 +26,7 @@ import { CallbackPage } from "./components/auth0/callback-page";
 import { v4 as uuid } from 'uuid';
 import { postQuiz } from "./components/HighScores/UserQuizDataService";
 import { Auth0ProviderWithNavigate } from "./components/auth0/auth0-provider-with-navigate";
+import UserPage from "./components/UserPage";
 
 
 const MainContainer = () => {
@@ -235,6 +236,7 @@ const quizData = {
               <Route path="/landing" element={<LandingPage />} />
               <Route path="/high-scores" element={<HighScores />} />
               <Route path="/callback" element={<CallbackPage/>}/>
+              <Route path="/user" element={<UserPage/>}/>
               <Route path="*" element={<ErrorPage/>} />
             </Routes>
           {/* </Auth0ProviderWithNavigate> */}

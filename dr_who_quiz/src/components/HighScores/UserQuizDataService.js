@@ -1,6 +1,6 @@
 const baseURL = "http://localhost:9000/api/scores/";
 
-export const getScores = () => {
+export const getQuizzes = () => {
     return fetch(baseURL)
         .then(res => res.json())
 }
