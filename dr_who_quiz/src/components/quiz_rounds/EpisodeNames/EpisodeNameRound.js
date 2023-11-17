@@ -74,7 +74,7 @@ setIsEpisodeNamesRoundFinished}) => {
 
   return (
     <>
-   <div>
+    <div className="show-quiz">
       {showQuiz && renderQuiz()}
       {!showQuiz && (
         <div>
@@ -82,7 +82,7 @@ setIsEpisodeNamesRoundFinished}) => {
       </div>
       )}
       </div>
-    <Footer />
+    
     </>
   );
 };

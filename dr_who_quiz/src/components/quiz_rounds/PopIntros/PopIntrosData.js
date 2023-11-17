@@ -64,12 +64,13 @@ const PopIntrosData = ({isIntros2Finished, setIsIntros2Finished}) => {
         }
 
     return ( <div>
-        
+        <div className="round-copy"> 
         <header><h1>The Intros Round - Pop Music</h1></header>
         <p>Click on the play button to hear 10 seconds of a song (that can - sometimes loosely - be described as pop music) used in an episode of Doctor Who.</p> 
         <p>For one point, simply tell us which story it is from.</p>
         <aside>The audio will keep playing for 10 seconds once you click 'Play Intro', even if you move onto the next question.</aside>
         <aside>There are 10 questions in this round.</aside>
+          
           <br />
     
         {!showRound && (
@@ -80,6 +81,7 @@ const PopIntrosData = ({isIntros2Finished, setIsIntros2Finished}) => {
     
           {showRound && <PopIntrosRound popMusicQuestions={popMusicQuestions} 
                              setIsIntros2Finished={setIsIntros2Finished}       />}
+          </div>
           <Footer />
           </div>
         );

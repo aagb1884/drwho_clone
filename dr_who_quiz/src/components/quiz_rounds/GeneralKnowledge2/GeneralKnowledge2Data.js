@@ -64,12 +64,12 @@ const GeneralKnowledge2Data = ({isGeneral2RoundFinished, setIsGeneral2RoundFinis
       }
 
     return( <div>
-        
+        <div className="round-copy"> 
     <header><h1>General Knowledge - Part Two</h1></header>
     <p>Further questions about Doctor Who in general.</p>
     <aside>There are 10 questions in this round.</aside>
       <br />
-
+       
     {!showRound && (
         <button id="start-round" className="button" onClick={startQuizButton}>
           Start Round
@@ -78,7 +78,8 @@ const GeneralKnowledge2Data = ({isGeneral2RoundFinished, setIsGeneral2RoundFinis
 
       {showRound && <GeneralKnowledge2Round generalKnowledgeQuestions2={generalKnowledgeQuestions2} 
                              setIsGeneral2RoundFinished={setIsGeneral2RoundFinished}   />}
-      <Footer />
+       </div>
+       <Footer />
       </div>
     );
 }

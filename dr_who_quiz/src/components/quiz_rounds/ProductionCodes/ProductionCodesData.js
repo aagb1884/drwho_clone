@@ -96,10 +96,13 @@ const ProductionCodesData = ({isProductionCodesRoundFinished,
     
     return ( 
       <div>
+        <div className="round-copy"> 
       <header><h1>Seize the Codes of Production</h1></header>
       <p>Pick the correct answer from four options.</p>
       <aside>A production code is an alphanumberic designation used to uniquely identify episodes within a television series.</aside>
       <aside>There are 10 questions in this round.</aside>
+        
+        
         <br />
   
       {!showRound && (
@@ -112,6 +115,7 @@ const ProductionCodesData = ({isProductionCodesRoundFinished,
                       productionCodesQuestions={productionCodesQuestions} 
                       setIsProductionCodesRoundFinished={setIsProductionCodesRoundFinished}
                       />}
+        </div>
         <Footer />
         </div>
       );

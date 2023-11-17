@@ -84,9 +84,11 @@ const MultipleChoiceData = ({isOddOneOutRoundFinished,
     
     return ( 
       <div>
+        <div className="round-copy"> 
       <header><h1>Odd One Out</h1></header>
       <p>Pick the correct answer from four options.</p>
       <aside>There are 10 questions in this round.</aside>
+       
         <br />
   
       {!showRound && (
@@ -98,6 +100,7 @@ const MultipleChoiceData = ({isOddOneOutRoundFinished,
         {showRound && <MultipleChoiceRound 
                       MultipleChoiceQuestions={MultipleChoiceQuestions} 
                       setIsOddOneOutRoundFinished={setIsOddOneOutRoundFinished}/>}
+        </div>
         <Footer />
         </div>
       );

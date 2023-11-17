@@ -17,7 +17,7 @@ const MultipleChoiceQuestion = ({q_index, question, options, checkAnswer, isAnsw
     };
 
     return ( 
-        <>
+        <div className="multiple-choice-question">
         <p>{question.question}</p>    
        {/* Render options */}
       {question.options.map((option, index) => (
@@ -50,7 +50,7 @@ const MultipleChoiceQuestion = ({q_index, question, options, checkAnswer, isAnsw
             <p className="wrong" >Incorrect, sorry.</p>
         )}
    
-        </>
+        </div>
      );
 }
 

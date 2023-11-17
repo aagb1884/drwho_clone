@@ -89,10 +89,11 @@ const EpisodeNameData = ({isEpisodeNamesRoundFinished, setIsEpisodeNamesRoundFin
 
 
     return( <div>
-        
+      <div className="round-copy"> 
     <header><h1>A Quiz of Necessity</h1></header>
     <p>Going by DVD/official titles, can you name the serial in which each of these individual First Doctor episode titles belongs?</p>
     <aside>There are 15 questions in this round.</aside>
+    
       <br />
 
     {!showRound && (
@@ -103,6 +104,7 @@ const EpisodeNameData = ({isEpisodeNamesRoundFinished, setIsEpisodeNamesRoundFin
 
       {showRound && <EpisodeNameRound episodeNameQuestions={episodeNameQuestions} 
                       setIsEpisodeNamesRoundFinished={setIsEpisodeNamesRoundFinished}          />}
+       </div> 
       <Footer />
       </div>
     );

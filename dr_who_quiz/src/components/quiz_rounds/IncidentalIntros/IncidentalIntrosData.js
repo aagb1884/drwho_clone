@@ -65,7 +65,7 @@ const IncidentalIntrosData = ({isIntros1Finished, setIsIntros1Finished}) => {
 
 
     return ( <div>
-        
+        <div className="round-copy"> 
         <header><h1>The Intros Round - Incidental Music</h1></header>
         <p>Click on the play button to hear 10 seconds of composed incidental music from Doctor Who.</p> 
         <p>For one point, simply tell us which story it is from.</p>
@@ -82,6 +82,7 @@ const IncidentalIntrosData = ({isIntros1Finished, setIsIntros1Finished}) => {
           {showRound && <IncidentalIntrosRound incidentalMusicQuestions={incidentalMusicQuestions} 
                                setIsIntros1Finished={setIsIntros1Finished}     />}
           <Footer />
+          </div>
           </div>
         );
     }

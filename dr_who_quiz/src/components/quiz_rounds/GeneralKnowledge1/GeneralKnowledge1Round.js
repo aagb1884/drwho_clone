@@ -74,14 +74,14 @@ const GeneralKnowledgeOneRound = ({generalKnowledgeQuestions1,
 
   return (
     <>
-    <div>
+     <div className="show-quiz">
       {showQuiz && renderQuiz()}
       {!showQuiz && (
       <div>
         <p>Round Completed! You scored {generalKnowledgeRound1Score}/{generalKnowledgeQuestions1.length}</p> <button onClick={updateRoundScore}>End Round</button> 
       </div>)}
     </div>
-    <Footer />
+    
     </>
   );
 };

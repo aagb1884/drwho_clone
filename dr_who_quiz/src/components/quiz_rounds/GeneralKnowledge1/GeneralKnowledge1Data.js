@@ -66,7 +66,7 @@ const GeneralKnowledgeOneData = ({isGeneral1RoundFinished, setIsGeneral1RoundFin
       }
 
     return( <div>
-        
+        <div className="round-copy"> 
     <header><h1>General Knowledge - Part One</h1></header>
     <p>Questions about Doctor Who in general.</p>
     <aside>There are 10 questions in this round.</aside>
@@ -80,6 +80,7 @@ const GeneralKnowledgeOneData = ({isGeneral1RoundFinished, setIsGeneral1RoundFin
 
       {showRound && <GeneralKnowledgeOneRound generalKnowledgeQuestions1={generalKnowledgeQuestions1} 
                                 setIsGeneral1RoundFinished={setIsGeneral1RoundFinished}/>}
+      </div>
       <Footer/>
       </div>
     );

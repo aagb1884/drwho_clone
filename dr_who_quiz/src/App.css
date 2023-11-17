@@ -3,6 +3,10 @@
   color: white;
 }
 
+.countdown{
+  background-color: rgba(3,38,135, 0.6)
+}
+
 aside{
   font-size: small;
 }
@@ -58,7 +62,9 @@ a {
 }
 
 
-/* round buttons css in layout.css file */
+.credits{
+  background-color: rgba(3,38,135, 0.6);
+}
 
 
 

@@ -73,7 +73,7 @@ setIsGeneral2RoundFinished}) => {
 
   return (
     <>
-    <div>
+     <div className="show-quiz">
       {showQuiz && renderQuiz()}
       {!showQuiz && (
       <div>
@@ -81,7 +81,7 @@ setIsGeneral2RoundFinished}) => {
       </div>  
       )}
     </div>
-    <Footer />
+    
     </>
   );
 };

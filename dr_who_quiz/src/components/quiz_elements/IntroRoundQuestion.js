@@ -25,7 +25,7 @@ const IntroRoundQuestion = ({question, isAnswerCorrect, checkAnswer, audio}) => 
 
     return (
         <section className="audio-question">
-            {question.number}.
+            <b>Intro Number {question.number}</b>
             <br/>
             <button type="button" className="button" 
             onClick={handleButtonClick}>Play Intro</button>

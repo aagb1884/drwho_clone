@@ -75,7 +75,7 @@ const MultipleChoiceRound = ({MultipleChoiceQuestions, setIsOddOneOutRoundFinish
 
     return ( 
       <>
-      <div>
+       <div className="show-quiz">
         {showQuiz && renderQuiz()}
         {!showQuiz && (
         <div>
@@ -83,7 +83,7 @@ const MultipleChoiceRound = ({MultipleChoiceQuestions, setIsOddOneOutRoundFinish
         </div>  
         )}
       </div>
-      <Footer />
+      
       </>
     );
   };

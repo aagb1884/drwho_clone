@@ -65,7 +65,7 @@ const DogData = ({isDogRoundFinished, setIsDogRoundFinished}) => {
 
     return ( 
       <div>
-        
+        <div className="round-copy"> 
     <header><h1>They're All Good Dogs</h1></header>
     <p>A round based on dogs and/or dog-like characters.</p>
     <aside>There are 10 questions in this round.</aside>
@@ -79,6 +79,7 @@ const DogData = ({isDogRoundFinished, setIsDogRoundFinished}) => {
 
       {showRound && <DogRound DogQuestions={DogQuestions} 
                      setIsDogRoundFinished={setIsDogRoundFinished} />}
+      </div>
       <Footer/>
       </div>
     );

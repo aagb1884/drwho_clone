@@ -73,7 +73,7 @@ const DogRound = ({DogQuestions,
 
   return (
     <>
-    <div>
+    <div className="show-quiz">
       {showQuiz && renderQuiz()}
       {!showQuiz && (
       <div>
@@ -81,7 +81,7 @@ const DogRound = ({DogQuestions,
       </div>
         )}
     </div>
-    <Footer />
+  
     </>
   );
 };

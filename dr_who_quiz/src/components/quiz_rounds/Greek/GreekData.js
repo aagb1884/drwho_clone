@@ -90,13 +90,14 @@ const GreekData = ({isGreekRoundFinished, setIsGreekRoundFinished}) => {
 
     return ( 
       <div>
+        <div className="round-copy"> 
+          <header><h1>It's All Greek to Me</h1></header>
+          <p>A round based on letters of the Greek alphabet</p>
+          <aside>We are looking for answers as English words, not Greek letters.</aside> 
+          <aside>There are 10 questions in this round.</aside> 
+            <br />
         
-    <header><h1>It's All Greek to Me</h1></header>
-    <p>A round based on letters of the Greek alphabet</p>
-    <aside>We are looking for answers as English words, not Greek letters.</aside> 
-    <aside>There are 10 questions in this round.</aside> 
-      <br />
-
+        
     {!showRound && (
         <button id="start-round" className="button" onClick={startQuizButton}>
           Start Round
@@ -105,6 +106,7 @@ const GreekData = ({isGreekRoundFinished, setIsGreekRoundFinished}) => {
 
       {showRound && <GreekRound greekQuestions={GreekQuestions} 
                                 setIsGreekRoundFinished={setIsGreekRoundFinished}/>}
+      </div>
       <Footer />
       </div>
     );

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import FirstQuestionRound from './FirstQuestionRound';
 import Footer from '../../layout/Footer';
+import '../rounds.css'
 
 const FirstQuestionData = ({isFirstQuestionsRoundFinished, setIsFirstQuestionsRoundFinished}) => {
   
@@ -68,11 +69,12 @@ const FirstQuestionData = ({isFirstQuestionsRoundFinished, setIsFirstQuestionsRo
 
     return ( 
         <div>
-        
+        <div className="round-copy"> 
     <header><h1>The First Question</h1></header>
     <p>Name the character who says 'Doctor Who' in each of these stories where someone says 'Doctor Who'.</p>
     <aside>There are 10 questions in this round.</aside>
-      <br />
+     
+     <br />
 
     {!showRound && (
         <button id="start-round" className="button" onClick={startQuizButton}>
@@ -83,6 +85,7 @@ const FirstQuestionData = ({isFirstQuestionsRoundFinished, setIsFirstQuestionsRo
       {showRound && <FirstQuestionRound firstQuestionsQuestions={firstQuestionsQuestions}
                                         setIsFirstQuestionsRoundFinished={setIsFirstQuestionsRoundFinished}
                                 />}
+      </div> 
       <Footer />
       </div>
      );

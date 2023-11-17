@@ -9,9 +9,11 @@ const UserQuizInfo = ({allUserQuizzes}) => {
     return ( 
         <div className="user-quiz-info">
       
-      <h2>Quiz Information</h2>
-      {sortedQuizzes.map((quiz) => (
-        <div key={quiz.quizId}>
+      <h3>Quiz Information</h3>
+      {sortedQuizzes.map((quiz, index) => (
+        <div key={quiz.quizId}
+        className={index % 2 === 0 ? "even-row" : "odd-row"}
+         >
           
           <p>Date Last Saved {quiz.quizDateFinished}</p>
           <p>Finished: {quiz.isQuizFinished ? 'Yes' : 'No'}</p>

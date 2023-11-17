@@ -79,7 +79,7 @@ const PopIntrosRound = ({popMusicQuestions, setIsIntros2Finished}) => {
         };
 
     return (     <>
-      <div>
+       <div className="show-quiz">
         {showQuiz && renderQuiz()}
         {!showQuiz && (
         <div>
@@ -87,7 +87,7 @@ const PopIntrosRound = ({popMusicQuestions, setIsIntros2Finished}) => {
         </div>  
         )}
       </div>
-      <Footer />
+     
       </>
     );
   };

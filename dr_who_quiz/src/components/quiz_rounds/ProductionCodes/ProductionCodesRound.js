@@ -77,7 +77,7 @@ const ProductionCodesRound = ({productionCodesQuestions,
 
     return ( 
       <>
-      <div>
+       <div className="show-quiz">
         {showQuiz && renderQuiz()}
         {!showQuiz && (
         <div>
@@ -85,7 +85,7 @@ const ProductionCodesRound = ({productionCodesQuestions,
         </div>  
         )}
       </div>
-      <Footer />
+     
       </>
     );
   };

@@ -76,7 +76,7 @@ const GreekRound = ({ greekQuestions, setIsGreekRoundFinished }) => {
 
   return (
     <>
-    <div>
+     <div className="show-quiz">
       {showQuiz && renderQuiz()}
       {!showQuiz && (
       <div>
@@ -84,7 +84,7 @@ const GreekRound = ({ greekQuestions, setIsGreekRoundFinished }) => {
       </div>  
       )}
     </div>
-    <Footer />
+   
     </>
   );
 };

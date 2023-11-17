@@ -93,7 +93,7 @@ const WheelInSpaceData = ({isWheelInSpaceRoundFinished, setIsWheelInSpaceRoundFi
       setShowRound(true)
     }
     return ( <div>
-        
+        <div className="round-copy"> 
         <header><h1>Do You Know Our Ways?</h1></header>
         <p>Here are the twelve key points of the Cybermen's plan from the story 'The Wheel in Space', presented in random order.</p> 
         <p>Simply tell us the right order using the handy eight-digit reference numbers provided.</p>
@@ -109,6 +109,7 @@ const WheelInSpaceData = ({isWheelInSpaceRoundFinished, setIsWheelInSpaceRoundFi
                         wheelInSpaceQuestions={wheelInSpaceQuestions}
                         setIsWheelInSpaceRoundFinished={setIsWheelInSpaceRoundFinished}
                                     />}
+          </div>
           <Footer />
           </div>
         );

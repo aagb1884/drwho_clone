@@ -15,7 +15,7 @@ const Countdown = ({ reset }) => {
           }, [counter, reset]);
 
     return (
-        <div className="App">
+        <div className="countdown">
           <div>Countdown: {counter}</div>
         </div>
       );

@@ -64,11 +64,12 @@ const PlayedThemselvesData = ({isPlayedThemselvesRoundFinished, setIsPlayedThems
       }
 
     return (  <div>
-        
+        <div className="round-copy"> 
     <header><h1>You've Played Yourself</h1></header>
     <p>Questions about people who have played themselves in Doctor Who.</p>
     <aside>Mostly taken from the person in question's Tardis Wiki entry, these are clues to the identities of guest stars who played themselves in Doctor Who - name them and you'll earn yourself a glorious point.</aside>
     <aside>There are 10 questions in this round.</aside>
+      
       <br />
 
     {!showRound && (
@@ -79,6 +80,7 @@ const PlayedThemselvesData = ({isPlayedThemselvesRoundFinished, setIsPlayedThems
 
       {showRound && <PlayedThemselvesRound playedThemselvesQuestions={playedThemselvesQuestions} 
                          setIsPlayedThemselvesRoundFinished={setIsPlayedThemselvesRoundFinished}       />}
+      </div>
       <Footer />
       </div>
     );

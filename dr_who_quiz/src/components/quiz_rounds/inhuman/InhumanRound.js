@@ -75,7 +75,7 @@ setIsInhumanRoundFinished}) => {
   };
   
     return (   <>
-      <div>
+       <div className="show-quiz">
         {showQuiz && renderQuiz()}
         {!showQuiz && (
         <div>
@@ -83,7 +83,7 @@ setIsInhumanRoundFinished}) => {
         </div>  
         )}
       </div>
-      <Footer />
+     
       </>
     );
   };

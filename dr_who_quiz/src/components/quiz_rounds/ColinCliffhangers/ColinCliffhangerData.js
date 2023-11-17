@@ -66,7 +66,7 @@ const ColinCliffhangerData = ({isColinRoundFinished, setIsColinRoundFinished}) =
 
 
     return( <div>
-        
+        <div className="round-copy"> 
     <header><h1>The Many Cliffhanger Faces of Colin Baker</h1></header>
     <p>Simply tell us which story this Colin Baker Cliffhanger Face is from.</p>
     <aside>There are 10 questions in this round.</aside>
@@ -81,6 +81,7 @@ const ColinCliffhangerData = ({isColinRoundFinished, setIsColinRoundFinished}) =
       {showRound && <ColinCliffhangerRound 
       colinCliffhangerQuestions={colinCliffhangerQuestions}
       setIsColinRoundFinished={setIsColinRoundFinished} />}
+      </div>
       <Footer/>
       </div>
     );

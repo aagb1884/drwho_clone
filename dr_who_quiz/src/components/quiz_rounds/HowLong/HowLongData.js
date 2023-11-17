@@ -63,7 +63,7 @@ const HowLongData = ({isHowLongRoundFinished, setIsHowLongRoundFinished}) => {
           setShowRound(true)
         }
     return ( <div>
-        
+        <div className="round-copy"> 
         <header><h1>How Long...</h1></header>
         <aside>How long, in terms of time, were the following (all answers rounded to nearest whole number, measurements specified in each question).</aside>
         <aside>There are 10 questions in this round.</aside>
@@ -77,6 +77,7 @@ const HowLongData = ({isHowLongRoundFinished, setIsHowLongRoundFinished}) => {
     
           {showRound && <HowLongRound howLongQuestions={howLongQuestions} 
                                     setIsHowLongRoundFinished={setIsHowLongRoundFinished}/>}
+          </div>
           <Footer />
           </div>
         );

@@ -75,7 +75,7 @@ isColinRoundFinished, setIsColinRoundFinished}) => {
   };
   
     return (   <>
-        <div>
+        <div className="show-quiz">
           {showQuiz && renderQuiz()}
           {!showQuiz && (
             <div>
@@ -83,7 +83,7 @@ isColinRoundFinished, setIsColinRoundFinished}) => {
             </div>
     )}
         </div>
-        <Footer />
+       
        </>
       );
     };

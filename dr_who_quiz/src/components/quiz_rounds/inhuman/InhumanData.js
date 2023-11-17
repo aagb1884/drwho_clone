@@ -90,11 +90,12 @@ const InhumanData = ({isInhumanRoundFinished, setIsInhumanRoundFinished}) => {
 
 
     return( <div>
-        
+        <div className="round-copy"> 
         <header><h1>They're Inhuman!</h1></header>
         <p>Simply tell us which story the inanimate object in the picture is from.</p>
         <aside>Yes, spaceships count as inanimate objects.</aside>
         <aside>There are 15 questions in this round.</aside>
+          
           <br />
     
         {!showRound && (
@@ -106,7 +107,7 @@ const InhumanData = ({isInhumanRoundFinished, setIsInhumanRoundFinished}) => {
           {showRound && <InhumanRound
           inhumanQuestions={inhumanQuestions}
           setIsInhumanRoundFinished={setIsInhumanRoundFinished} />}
-          
+          </div>
           <Footer/>
           </div>
         );

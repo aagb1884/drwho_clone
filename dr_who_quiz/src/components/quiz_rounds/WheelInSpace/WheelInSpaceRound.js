@@ -87,7 +87,7 @@ const WheelInSpaceRound = ({plotPoints, wheelInSpaceQuestions,
     
     return (
       <>
-      <div>
+       <div className="show-quiz">
         {showQuiz && renderQuiz()}
         {!showQuiz && (
         <div>
@@ -95,7 +95,7 @@ const WheelInSpaceRound = ({plotPoints, wheelInSpaceQuestions,
         </div>  
         )}
       </div>
-      <Footer />
+      
       </>
     );
   };

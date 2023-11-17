@@ -78,7 +78,7 @@ return (
 );
 };
 return (     <>
-  <div>
+   <div className="show-quiz">
     {showQuiz && renderQuiz()}
     {!showQuiz && (
     <div>
@@ -86,7 +86,7 @@ return (     <>
     </div>  
     )}
   </div>
-  <Footer />
+  
   </>
 );
 };

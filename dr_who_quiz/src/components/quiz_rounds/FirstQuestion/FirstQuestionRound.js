@@ -76,7 +76,7 @@ const FirstQuestionRound = ({firstQuestionsQuestions,
 
   return (
     <>
-    <div>
+    <div className="show-quiz">
       {showQuiz && renderQuiz()}
       {!showQuiz && (
       <div>
@@ -84,7 +84,7 @@ const FirstQuestionRound = ({firstQuestionsQuestions,
       </div>  
       )}
     </div>
-    <Footer />
+   
     </>
   );
 };
