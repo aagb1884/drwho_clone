@@ -3,7 +3,7 @@
   color: white;
 }
 
-.countdown, .popup-message{
+.countdown, .popup-message, .credits, .copyright{
   background-color: rgba(3,38,135, 0.6);
   padding: 10px;
 }
@@ -61,15 +61,6 @@ footer {
 a {
   color: white;
 }
-
-
-.credits{
-  background-color: rgba(3,38,135, 0.6);
-}
-
-
-
-
 
 /* radio buttons design */
 .radio {
