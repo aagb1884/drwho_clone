@@ -3,7 +3,7 @@
   color: white;
 }
 
-.countdown, .popup-message, .credits, .copyright{
+.countdown, .popup-message, .credits, .copyright, .user-page-content{
   background-color: rgba(3,38,135, 0.6);
   padding: 10px;
 }

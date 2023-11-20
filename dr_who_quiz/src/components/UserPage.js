@@ -4,7 +4,7 @@ import Header from "./layout/Header";
 import Footer from "./layout/Footer";
 import UserQuizInfo from "./UserQuizInfo";
 
-const UserPage = ({setSelectedQuiz}) => {
+const UserPage = ({setSelectedQuiz, username}) => {
     const [userScores, setUserScores] = useState([]);
 
     useEffect(()=> {
@@ -13,14 +13,14 @@ const UserPage = ({setSelectedQuiz}) => {
         })
     }, []);
 
-    const allUserQuizzes = userScores.filter((quiz) => quiz.quizUser === "username")
+    const allUserQuizzes = userScores.filter((quiz) => quiz.quizUser === username)
    
 
     return ( 
         <>
         <Header />
         <section className="user-page-content">
-            <h1>User Info Page</h1>
+            <h1>{username.length === 0 ? "User Info Page" : `${username}'s Info Page`}</h1>
             <UserQuizInfo allUserQuizzes={allUserQuizzes}
                           setSelectedQuiz={setSelectedQuiz}  
                             />

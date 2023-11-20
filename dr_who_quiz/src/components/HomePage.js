@@ -1,7 +1,6 @@
 import Header from './layout/Header';
 import Footer from "./layout/Footer";
 import RoundButtons from './layout/RoundButtons';
-import { useAuth0 } from "@auth0/auth0-react";
 
 const HomePage = ({totalScore, isFirstQuestionsRoundFinished,
         isColinRoundFinished, isGreekRoundFinished, isOddOneOutRoundFinished,

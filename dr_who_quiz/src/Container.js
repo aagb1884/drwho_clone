@@ -46,7 +46,7 @@ const MainContainer = () => {
     const [isPlayedThemselvesRoundFinished, setIsPlayedThemselvesRoundFinished] = useState(false);
     const [isWheelInSpaceRoundFinished, setIsWheelInSpaceRoundFinished] = useState(false);
     const [isQuizFinished, setIsQuizFinished] = useState(false);
-    const[selectedQuiz, setSelectedQuiz] = useState(null);
+    const [selectedQuiz, setSelectedQuiz] = useState(null);
 
     const resetQuiz = () => {
         setIsFirstQuestionsRoundFinished(false);
@@ -238,6 +238,7 @@ const quizData = {
               {/* <Route path="/callback" element={<CallbackPage/>}/> */}
               <Route path="/user" element={<UserPage
                setSelectedQuiz={setSelectedQuiz}
+               username={username}
               />}/>
               <Route path="*" element={<ErrorPage/>} />
             </Routes>
