@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import UserInfoBox from "./UserInfoBox";
+import QuizButtons from "./QuizButtons";
 
 const RoundButtons = (
         { isFirstQuestionsRoundFinished, isColinRoundFinished, isGreekRoundFinished, isOddOneOutRoundFinished,
@@ -7,7 +8,7 @@ const RoundButtons = (
         isGeneral2RoundFinished, isProductionCodesRoundFinished, isInhumanRoundFinished,
         isHowLongRoundFinished, isIntros1RoundFinished, isIntros2RoundFinished, 
         isPlayedThemselvesRoundFinished, isWheelInSpaceRoundFinished, resetQuiz, totalScore, isQuizFinished, 
-        saveQuiz, finishQuiz, quizData}) => {
+        saveQuiz, finishQuiz, quizData, username, setUsername}) => {
                 
      
 
@@ -176,30 +177,12 @@ const RoundButtons = (
             
             </section>
             
-            <UserInfoBox totalScore={totalScore} />
+            <UserInfoBox totalScore={totalScore} username={username} />
+                <QuizButtons resetQuiz={resetQuiz}
+                saveQuiz={saveQuiz} isQuizFinished={isQuizFinished}
+                finishQuiz={finishQuiz} username={username} setUsername={setUsername} />
 
-            <div className="quiz-buttons-row">
-            <div className="new-quiz-button">
-                <button onClick={resetQuiz}
-                >Start New Quiz</button>  
-            </div>
-
-            <div className="save-quiz-button">
-                <button onClick={saveQuiz}
-                >Save Quiz</button>  
-            </div>
-
-            <div className="add-to-high-score-button">
-                <button onClick={saveQuiz}
-                disabled={!isQuizFinished}
-                >Submit Score</button>
-            </div>
-
-            <div className="finish-quiz-button">
-                <button onClick={finishQuiz}
-                 >Finish quiz</button>
-            </div>
-            </div>
+           
             </div>
         
      );

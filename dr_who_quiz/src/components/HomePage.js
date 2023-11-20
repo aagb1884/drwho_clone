@@ -9,8 +9,8 @@ const HomePage = ({totalScore, isFirstQuestionsRoundFinished,
         isGeneral2RoundFinished, isProductionCodesRoundFinished, isInhumanRoundFinished,
         isHowLongRoundFinished, isIntros1RoundFinished, isIntros2RoundFinished, 
         isPlayedThemselvesRoundFinished, isWheelInSpaceRoundFinished, resetQuiz, 
-        isQuizFinished, saveQuiz, finishQuiz, quizData}) => {
-            const { isAuthenticated } = useAuth0();
+        isQuizFinished, saveQuiz, finishQuiz, quizData, username, setUsername}) => {
+         
            
 
     return (  
@@ -18,13 +18,7 @@ const HomePage = ({totalScore, isFirstQuestionsRoundFinished,
         <Header />
         <br/>
         <div className='home-page-wrapper'>
-        {/* {!isAuthenticated && (
-                    <div className='login-text'>
-                        <h1>Log in to see the quiz.</h1>
-                    </div>
-                )}
-                 {isAuthenticated && (
-                    <> */}
+       
         <RoundButtons  
         isFirstQuestionsRoundFinished={isFirstQuestionsRoundFinished}
         isColinRoundFinished={isColinRoundFinished}
@@ -47,10 +41,11 @@ const HomePage = ({totalScore, isFirstQuestionsRoundFinished,
         saveQuiz={saveQuiz}
         finishQuiz={finishQuiz}
         quizData={quizData}
+        username={username}
+        setUsername={setUsername}
         />
         
-        {/* </>
-        )} */}
+      
         </div>
         <Footer />
         </section>

@@ -22,15 +22,14 @@ import PlayedThemselvesData from "./components/quiz_rounds/PlayedThemselves/Play
 import WheelInSpaceData from "./components/quiz_rounds/WheelInSpace/WheelInSpaceData";
 import LandingPage from './components/Landing';
 import HighScores from "./components/HighScores/HighScores";
-import { CallbackPage } from "./components/auth0/callback-page";
 import { v4 as uuid } from 'uuid';
 import { postQuiz } from "./components/HighScores/UserQuizDataService";
-import { Auth0ProviderWithNavigate } from "./components/auth0/auth0-provider-with-navigate";
 import UserPage from "./components/UserPage";
 
 
 const MainContainer = () => {
     const { totalScore, resetScoreToZero } = useScore();
+    const [username, setUsername] = useState("")
     const [isFirstQuestionsRoundFinished, setIsFirstQuestionsRoundFinished] = useState(false);
     const [isColinRoundFinished, setIsColinRoundFinished] = useState(false);
     const [isGreekRoundFinished, setIsGreekRoundFinished] = useState(false);
@@ -116,7 +115,7 @@ const MainContainer = () => {
         setIsQuizFinished(true)
 }
 const quizData = {
-  quizUser: "username",
+  quizUser: username,
   quizDateFinished: getDate(),
   roundsCompleted: [{isFirstQuestionsRoundFinished: isFirstQuestionsRoundFinished}, 
     {isColinRoundFinished: isColinRoundFinished}, {isGreekRoundFinished: isGreekRoundFinished}, 
@@ -151,8 +150,7 @@ const quizData = {
         <>
         
         <BrowserRouter>
-          {/* <Auth0ProviderWithNavigate> */}
-            <Routes>
+          <Routes>
               <Route path="/" element={<HomePage totalScore={totalScore}
                                       isFirstQuestionsRoundFinished={isFirstQuestionsRoundFinished}
                                       isColinRoundFinished={isColinRoundFinished}
@@ -173,7 +171,9 @@ const quizData = {
                                       isQuizFinished={isQuizFinished}
                                       saveQuiz={saveQuiz} 
                                       finishQuiz={finishQuiz}
-                                      quizData={quizData}/>} />
+                                      quizData={quizData}
+                                      username={username}
+                                      setUsername={setUsername} />} />
               <Route path="/first-questions" element={<FirstQuestionData 
                                       isFirstQuestionsRoundFinished={isFirstQuestionsRoundFinished}
                                       setIsFirstQuestionsRoundFinished={setIsFirstQuestionsRoundFinished} />} />
@@ -235,13 +235,12 @@ const quizData = {
               <Route path="/about" element={<AboutPage />} />
               <Route path="/how" element={<HowItWorks />} />
               <Route path="/high-scores" element={<HighScores />} />
-              <Route path="/callback" element={<CallbackPage/>}/>
+              {/* <Route path="/callback" element={<CallbackPage/>}/> */}
               <Route path="/user" element={<UserPage
                setSelectedQuiz={setSelectedQuiz}
               />}/>
               <Route path="*" element={<ErrorPage/>} />
             </Routes>
-          {/* </Auth0ProviderWithNavigate> */}
       </BrowserRouter>
       </>
      );

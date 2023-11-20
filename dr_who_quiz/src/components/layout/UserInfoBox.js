@@ -1,20 +1,17 @@
 import { NavLink } from "react-router-dom";
 
-const UserInfoBox = ({totalScore}) => {
+const UserInfoBox = ({totalScore, username}) => {
 
     let total = 0;
     for (let i = 0; i < totalScore.length; i++) {
         total += totalScore[i];
     }
-    
-    // totalScore.reduce((acc, score) => acc + score, 0);
-    
-    console.log("hello from inside the app")
 
+  
     return ( 
         <section className="user-info-box">
         
-        <p>userName</p>
+        <p>{!username ? 'Enter a username below' : username}</p>
         <p>Total Score: {total}</p>
         <NavLink to="/user">User Page</NavLink>
         

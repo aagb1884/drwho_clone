@@ -3,8 +3,9 @@
   color: white;
 }
 
-.countdown{
-  background-color: rgba(3,38,135, 0.6)
+.countdown, .popup-message{
+  background-color: rgba(3,38,135, 0.6);
+  padding: 10px;
 }
 
 aside{
