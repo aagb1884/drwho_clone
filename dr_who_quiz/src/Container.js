@@ -142,9 +142,9 @@ const quizData = {
     
      
       
-//      for testing quiz data content
-//  const jsonString = JSON.stringify(quizData);
-// console.log('Serialized Quiz Data:', jsonString);
+    //  for testing quiz data content
+ const jsonString = JSON.stringify(quizData);
+console.log('Serialized Quiz Data:', jsonString);
 
     return (
         <>
