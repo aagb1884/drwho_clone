@@ -20,11 +20,11 @@ import IncidentalIntrosData from "./components/quiz_rounds/IncidentalIntros/Inci
 import PopIntrosData from "./components/quiz_rounds/PopIntros/PopIntrosData";
 import PlayedThemselvesData from "./components/quiz_rounds/PlayedThemselves/PlayedThemselvesData";
 import WheelInSpaceData from "./components/quiz_rounds/WheelInSpace/WheelInSpaceData";
-import LandingPage from './components/Landing';
+import LandingPage from './deprecated/Landing';
 import HighScores from "./components/HighScores/HighScores";
 import { v4 as uuid } from 'uuid';
 import { postQuiz } from "./components/HighScores/UserQuizDataService";
-import UserPage from "./components/UserPage";
+import UserPage from "./deprecated/UserPage";
 
 
 const MainContainer = () => {
@@ -46,7 +46,7 @@ const MainContainer = () => {
     const [isPlayedThemselvesRoundFinished, setIsPlayedThemselvesRoundFinished] = useState(false);
     const [isWheelInSpaceRoundFinished, setIsWheelInSpaceRoundFinished] = useState(false);
     const [isQuizFinished, setIsQuizFinished] = useState(false);
-    const [selectedQuiz, setSelectedQuiz] = useState(null);
+
 
     const resetQuiz = () => {
         setIsFirstQuestionsRoundFinished(false);
@@ -173,7 +173,8 @@ const quizData = {
                                       finishQuiz={finishQuiz}
                                       quizData={quizData}
                                       username={username}
-                                      setUsername={setUsername} />} />
+                                      setUsername={setUsername}
+                                      />} />
               <Route path="/first-questions" element={<FirstQuestionData 
                                       isFirstQuestionsRoundFinished={isFirstQuestionsRoundFinished}
                                       setIsFirstQuestionsRoundFinished={setIsFirstQuestionsRoundFinished} />} />
@@ -235,11 +236,6 @@ const quizData = {
               <Route path="/about" element={<AboutPage />} />
               <Route path="/how" element={<HowItWorks />} />
               <Route path="/high-scores" element={<HighScores />} />
-              {/* <Route path="/callback" element={<CallbackPage/>}/> */}
-              <Route path="/user" element={<UserPage
-               setSelectedQuiz={setSelectedQuiz}
-               username={username}
-              />}/>
               <Route path="*" element={<ErrorPage/>} />
             </Routes>
       </BrowserRouter>

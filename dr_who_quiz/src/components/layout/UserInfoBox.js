@@ -13,7 +13,6 @@ const UserInfoBox = ({totalScore, username}) => {
         
         <p>{!username ? 'Enter a username below' : username}</p>
         <p>Total Score: {total}</p>
-        <NavLink to="/user">User Page</NavLink>
         
         </section>
      );

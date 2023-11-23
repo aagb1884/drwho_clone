@@ -19,7 +19,7 @@ const ScoresTable = ({allScores}) => {
 
         return (
         <div className={`score-row ${rowClass}`} key={score._id}>
-            <Score score={score} username={score.quizUser} totalscore={score.totalScore} />
+            <Score score={score} username={score.quizUser} totalscore={score.totalScore} date={score.quizDateFinished}/>
         </div>
         )
     });
@@ -31,6 +31,7 @@ const ScoresTable = ({allScores}) => {
             <div className="header-row">
               <span>Username</span>
               <span>High Score</span>
+              <span>Date Finished</span>
             </div>
             {scoresList}
           </div>

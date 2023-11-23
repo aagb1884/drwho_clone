@@ -1,4 +1,4 @@
-const baseURL = "http://localhost:9000/api/scores/";
+const baseURL = process.env.REACT_APP_MONGODB_BASE_URL;
 
 export const getQuizzes = () => {
     return fetch(baseURL)

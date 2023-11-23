@@ -6,7 +6,6 @@ import { ScoreProvider } from './components/quiz_elements/ScoreContext';
 
 function App() {
 
-
  
   return (
     <div className="App">
