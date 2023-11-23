@@ -1,6 +1,6 @@
 
 const { MongoClient, ServerApiVersion } = require('mongodb');
-
+require('dotenv').config();
 
 const uri = process.env.REACT_APP_MONGODB_URI;
 

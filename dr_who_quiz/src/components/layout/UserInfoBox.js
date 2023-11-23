@@ -11,7 +11,7 @@ const UserInfoBox = ({totalScore, username}) => {
     return ( 
         <section className="user-info-box">
         
-        <p>{!username ? 'Enter a username below' : username}</p>
+        <p>{!username ? 'Enter a username below' : `Hello ${username}`}</p>
         <p>Total Score: {total}</p>
         
         </section>
