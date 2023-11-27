@@ -24,7 +24,7 @@ import LandingPage from './deprecated/Landing';
 import HighScores from "./components/HighScores/HighScores";
 import { v4 as uuid } from 'uuid';
 import { postQuiz } from "./components/HighScores/UserQuizDataService";
-import UserPage from "./deprecated/UserPage";
+
 
 
 const MainContainer = () => {
