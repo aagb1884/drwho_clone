@@ -4,20 +4,21 @@ const app = express();
 const createRouter = require('./helpers/create_router');
 const cors = require('cors')
 const { MongoClient } = require('mongodb');
-require('dotenv').config();
-
 const uri = process.env.REACT_APP_MONGODB_URI;
 
 // middleware
 app.use(express.json());
 app.use(cors())
 
+
 const port = process.env.PORT || 9000;
 
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 app.get('/api/quiz', async (req, res) => {
+
   try {
     await client.connect();
+    console.log('Connected to MongoDB');
     const database = client.db('drWhoQuiz');
     const quizCollection = database.collection('quizScores');
 

@@ -1,5 +1,6 @@
 const baseURL = process.env.REACT_APP_MONGODB_BASE_URL;
 
+
 export const getQuizzes = () => {
     return fetch(baseURL)
         .then(res => res.json())
